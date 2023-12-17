@@ -57,7 +57,7 @@ async function describe(event, prompt, api) {
       api.sendMessage(
         "Something happened, try again.",
         event.threadID,
-        event.messageID
+        event.messageReply.messageID
       );
       console.log(error);
     }
