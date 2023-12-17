@@ -15,7 +15,7 @@ login(
   async (err, api) => {
     if (err) return console.error(err);
 
-    api.setOptions({ listenEvents: true, forceLogin: true });
+    api.setOptions({ listenEvents: true });
     console.log("ON");
     api.sendMessage("I am on!", "100008672340619");
 
