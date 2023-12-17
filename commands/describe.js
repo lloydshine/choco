@@ -52,7 +52,11 @@ async function describe(event, prompt, api) {
 
       const result = await model.generateContent([prompt, ...imageParts]);
       const response = await result.response;
-      api.sendMessage(response.text(), event.threadID, event.messageID);
+      api.sendMessage(
+        response.text(),
+        event.threadID,
+        event.messageReply.messageID
+      );
     } catch (error) {
       api.sendMessage(
         "Something happened, try again.",
